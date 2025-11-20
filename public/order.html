@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뮤직비디오 제작 의뢰 - AI 뮤직비디오 마켓</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-video"></i>
+                    <span>AI MV Market</span>
+                </div>
+                <nav class="nav">
+                    <a href="/">홈</a>
+                    <a href="/#categories">카테고리</a>
+                    <a href="/#how-it-works">이용방법</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 주문 페이지 -->
+    <section class="order-page">
+        <div class="container">
+            <div class="order-layout">
+                <!-- 왼쪽: 주문 폼 -->
+                <div class="order-form-container">
+                    <div class="form-header">
+                        <h1>뮤직비디오 제작 의뢰</h1>
+                        <p>아래 정보를 작성해주시면 크리에이터가 연락드립니다</p>
+                    </div>
+
+                    <form id="orderForm" class="order-form">
+                        <div class="form-section">
+                            <h2><i class="fas fa-user"></i> 의뢰인 정보</h2>
+                            
+                            <div class="form-group">
+                                <label for="clientName">이름 <span class="required">*</span></label>
+                                <input type="text" id="clientName" name="clientName" required 
+                                       placeholder="홍길동">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="clientEmail">이메일 <span class="required">*</span></label>
+                                    <input type="email" id="clientEmail" name="clientEmail" required 
+                                           placeholder="example@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientPhone">연락처 <span class="required">*</span></label>
+                                    <input type="tel" id="clientPhone" name="clientPhone" required 
+                                           placeholder="010-1234-5678">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h2><i class="fas fa-music"></i> 프로젝트 정보</h2>
+                            
+                            <div class="form-group">
+                                <label for="projectTitle">프로젝트 제목 <span class="required">*</span></label>
+                                <input type="text" id="projectTitle" name="projectTitle" required 
+                                       placeholder="예: '여름밤' 뮤직비디오 제작">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="musicGenre">음악 장르 <span class="required">*</span></label>
+                                    <select id="musicGenre" name="musicGenre" required>
+                                        <option value="">선택하세요</option>
+                                        <option value="힙합/랩">힙합/랩</option>
+                                        <option value="발라드">발라드/감성</option>
+                                        <option value="EDM">EDM/일렉트로닉</option>
+                                        <option value="K-POP">K-POP</option>
+                                        <option value="록/밴드">록/밴드</option>
+                                        <option value="R&B">R&B</option>
+                                        <option value="인디">인디</option>
+                                        <option value="기타">기타</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="videoLength">영상 길이 <span class="required">*</span></label>
+                                    <select id="videoLength" name="videoLength" required>
+                                        <option value="">선택하세요</option>
+                                        <option value="1-2분">1-2분</option>
+                                        <option value="2-3분">2-3분</option>
+                                        <option value="3-4분">3-4분</option>
+                                        <option value="4분 이상">4분 이상</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budget">예산 범위 <span class="required">*</span></label>
+                                <select id="budget" name="budget" required>
+                                    <option value="">선택하세요</option>
+                                    <option value="30-50만원">30-50만원</option>
+                                    <option value="50-70만원">50-70만원</option>
+                                    <option value="70-100만원">70-100만원</option>
+                                    <option value="100만원 이상">100만원 이상</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="deadline">희망 완료일 <span class="required">*</span></label>
+                                <input type="date" id="deadline" name="deadline" required>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h2><i class="fas fa-lightbulb"></i> 상세 요구사항</h2>
+                            
+                            <div class="form-group">
+                                <label for="description">프로젝트 설명 <span class="required">*</span></label>
+                                <textarea id="description" name="description" rows="6" required 
+                                          placeholder="어떤 컨셉과 분위기의 뮤직비디오를 원하시나요? 구체적으로 설명해주세요.&#10;&#10;예시:&#10;- 몽환적이고 감성적인 분위기&#10;- AI로 생성된 판타지 배경&#10;- 주인공이 여행하는 스토리"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reference">참고 자료 (선택)</label>
+                                <textarea id="reference" name="reference" rows="3" 
+                                          placeholder="참고하고 싶은 뮤직비디오 링크나 이미지 URL을 입력해주세요"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="musicFile">음악 파일 URL (선택)</label>
+                                <input type="url" id="musicFile" name="musicFile" 
+                                       placeholder="음악 파일이 있는 URL (Dropbox, Google Drive 등)">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-cancel" onclick="history.back()">
+                                취소
+                            </button>
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-paper-plane"></i> 의뢰하기
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 오른쪽: 크리에이터 정보 -->
+                <div class="order-sidebar">
+                    <div class="creator-card">
+                        <h3>선택한 크리에이터</h3>
+                        <div class="creator-info">
+                            <div class="creator-header">
+                                <h4 id="creatorName">로딩 중...</h4>
+                                <div class="creator-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span id="creatorRating"></span>
+                                </div>
+                            </div>
+                            <p id="creatorTitle" class="creator-subtitle"></p>
+                            <div class="creator-specialty">
+                                <i class="fas fa-crown"></i>
+                                <span id="creatorSpecialty"></span>
+                            </div>
+                        </div>
+
+                        <div class="creator-stats">
+                            <div class="stat-box">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong id="creatorOrders"></strong>
+                                    <span>완료 건수</span>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong id="creatorResponse"></strong>
+                                    <span>평균 응답</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="price-info">
+                            <span class="price-label">시작 가격</span>
+                            <div id="creatorPrice" class="price-value"></div>
+                        </div>
+                    </div>
+
+                    <div class="order-info-box">
+                        <h3><i class="fas fa-info-circle"></i> 진행 절차</h3>
+                        <ol class="process-list">
+                            <li>의뢰서 접수</li>
+                            <li>크리에이터 검토 (1-2시간)</li>
+                            <li>상세 상담 진행</li>
+                            <li>견적 확정 및 계약</li>
+                            <li>제작 시작</li>
+                            <li>수정 및 최종 전달</li>
+                        </ol>
+                    </div>
+
+                    <div class="order-info-box">
+                        <h3><i class="fas fa-shield-alt"></i> 안심 서비스</h3>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check"></i> 프로젝트 진행 보증</li>
+                            <li><i class="fas fa-check"></i> 무료 수정 기회</li>
+                            <li><i class="fas fa-check"></i> 24/7 고객 지원</li>
+                            <li><i class="fas fa-check"></i> 분쟁 조정 시스템</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 성공 모달 -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>의뢰가 성공적으로 접수되었습니다!</h2>
+            <p>크리에이터가 곧 연락드릴 예정입니다.</p>
+            <p class="modal-subtext">입력하신 이메일과 연락처로 확인 메시지를 보내드렸습니다.</p>
+            <button class="btn-modal-close" onclick="closeSuccessModal()">
+                확인
+            </button>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AI MV Market</h4>
+                    <p>AI 기술로 만드는 차세대 뮤직비디오 플랫폼</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <a href="/">크리에이터 찾기</a>
+                    <a href="/#categories">카테고리</a>
+                    <a href="/#how-it-works">이용방법</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI MV Market. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/order.js"></script>
+</body>
+</html>

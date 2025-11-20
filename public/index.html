@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 뮤직비디오 마켓 - 최고의 크리에이터를 만나보세요</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-video"></i>
+                    <span>AI MV Market</span>
+                </div>
+                <nav class="nav">
+                    <a href="/">홈</a>
+                    <a href="#categories">카테고리</a>
+                    <a href="#how-it-works">이용방법</a>
+                    <a href="#" class="btn-register">크리에이터 등록</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>당신의 음악에 생명을 불어넣는<br><span class="highlight">AI 뮤직비디오</span></h1>
+                <p>검증된 전문 크리에이터가 최신 AI 기술로 만드는 고품질 뮤직비디오</p>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="어떤 스타일의 뮤직비디오를 찾으시나요? (예: 힙합, 발라드, EDM)">
+                    <button class="btn-search"><i class="fas fa-search"></i> 검색</button>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <strong>2,610+</strong>
+                        <span>완료된 프로젝트</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>4.8★</strong>
+                        <span>평균 만족도</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>1시간</strong>
+                        <span>평균 응답시간</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 카테고리 섹션 -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title">인기 카테고리</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="힙합">
+                    <i class="fas fa-microphone"></i>
+                    <h3>힙합/랩</h3>
+                    <p>150+ 크리에이터</p>
+                </div>
+                <div class="category-card" data-category="발라드">
+                    <i class="fas fa-heart"></i>
+                    <h3>발라드/감성</h3>
+                    <p>120+ 크리에이터</p>
+                </div>
+                <div class="category-card" data-category="EDM">
+                    <i class="fas fa-bolt"></i>
+                    <h3>EDM/일렉트로닉</h3>
+                    <p>98+ 크리에이터</p>
+                </div>
+                <div class="category-card" data-category="K-POP">
+                    <i class="fas fa-star"></i>
+                    <h3>K-POP</h3>
+                    <p>180+ 크리에이터</p>
+                </div>
+                <div class="category-card" data-category="애니메이션">
+                    <i class="fas fa-palette"></i>
+                    <h3>애니메이션</h3>
+                    <p>75+ 크리에이터</p>
+                </div>
+                <div class="category-card" data-category="시네마틱">
+                    <i class="fas fa-film"></i>
+                    <h3>시네마틱</h3>
+                    <p>110+ 크리에이터</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 프리랜서 목록 -->
+    <section class="freelancers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">추천 크리에이터</h2>
+                <div class="filter-controls">
+                    <select id="sortBy" class="filter-select">
+                        <option value="rating">평점순</option>
+                        <option value="orders">주문순</option>
+                        <option value="reviews">리뷰순</option>
+                    </select>
+                </div>
+            </div>
+            <div id="freelancerGrid" class="freelancer-grid">
+                <!-- 프리랜서 카드가 JavaScript로 동적 생성됩니다 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 이용방법 섹션 -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">이용방법</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <i class="fas fa-search"></i>
+                    <h3>크리에이터 찾기</h3>
+                    <p>포트폴리오를 보고 마음에 드는 크리에이터를 선택하세요</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <i class="fas fa-phone"></i>
+                    <h3>전화 상담</h3>
+                    <p>전화로 상담하며 프로젝트 세부사항을 논의하세요</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <i class="fas fa-file-contract"></i>
+                    <h3>의뢰 접수</h3>
+                    <p>온라인 폼으로 간편하게 제작 의뢰를 신청하세요</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <i class="fas fa-video"></i>
+                    <h3>제작 & 수령</h3>
+                    <p>크리에이터가 제작한 뮤직비디오를 받아보세요</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AI MV Market</h4>
+                    <p>AI 기술로 만드는 차세대 뮤직비디오 플랫폼</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <a href="#">크리에이터 찾기</a>
+                    <a href="#">카테고리</a>
+                    <a href="#">이용방법</a>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <a href="#">자주 묻는 질문</a>
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보처리방침</a>
+                </div>
+                <div class="footer-section">
+                    <h4>문의하기</h4>
+                    <p><i class="fas fa-envelope"></i> support@aimvmarket.com</p>
+                    <p><i class="fas fa-phone"></i> 1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI MV Market. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

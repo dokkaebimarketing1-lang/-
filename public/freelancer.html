@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>크리에이터 프로필 - AI 뮤직비디오 마켓</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/freelancer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-video"></i>
+                    <span>AI MV Market</span>
+                </div>
+                <nav class="nav">
+                    <a href="/">홈</a>
+                    <a href="/#categories">카테고리</a>
+                    <a href="/#how-it-works">이용방법</a>
+                    <a href="#" class="btn-register">크리에이터 등록</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 프로필 상세 -->
+    <section class="profile-detail">
+        <div class="container">
+            <div class="profile-layout">
+                <!-- 왼쪽: 프로필 정보 -->
+                <div class="profile-main">
+                    <div class="profile-header">
+                        <div class="profile-info">
+                            <h1 id="freelancerName">로딩 중...</h1>
+                            <p id="freelancerTitle" class="profile-subtitle"></p>
+                            <div class="profile-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-star"></i>
+                                    <span id="rating"></span>
+                                    <span id="reviewCount" class="text-muted"></span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span id="orderCount"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-specialty">
+                        <i class="fas fa-crown"></i>
+                        <span id="specialty"></span>
+                    </div>
+
+                    <div class="profile-section">
+                        <h2>소개</h2>
+                        <p id="description" class="description-text"></p>
+                    </div>
+
+                    <div class="profile-section">
+                        <h2>전문 기술</h2>
+                        <div id="skills" class="skills-list"></div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h2>포트폴리오</h2>
+                        <div id="portfolio" class="portfolio-grid"></div>
+                    </div>
+                </div>
+
+                <!-- 오른쪽: 주문 카드 -->
+                <div class="profile-sidebar">
+                    <div class="order-card sticky">
+                        <div class="price-section">
+                            <span class="price-label">시작 가격</span>
+                            <div id="price" class="price-amount"></div>
+                        </div>
+
+                        <div class="service-info">
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>평균 응답 시간</strong>
+                                    <p id="responseTime"></p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-redo"></i>
+                                <div>
+                                    <strong>수정 횟수</strong>
+                                    <p id="revisions"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a id="orderBtn" href="#" class="btn-order">
+                            <i class="fas fa-shopping-cart"></i> 주문하기
+                        </a>
+
+                        <button id="phoneBtn" class="btn-contact">
+                            <i class="fas fa-phone"></i> 전화 상담하기
+                        </button>
+
+                        <div id="phoneNumber" class="phone-display" style="display: none;">
+                            <i class="fas fa-phone-alt"></i>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 비디오 모달 -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="video-wrapper">
+                <iframe id="modalVideo" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h3 id="modalVideoTitle"></h3>
+                <p id="modalVideoViews"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AI MV Market</h4>
+                    <p>AI 기술로 만드는 차세대 뮤직비디오 플랫폼</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <a href="/">크리에이터 찾기</a>
+                    <a href="/#categories">카테고리</a>
+                    <a href="/#how-it-works">이용방법</a>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <a href="#">자주 묻는 질문</a>
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보처리방침</a>
+                </div>
+                <div class="footer-section">
+                    <h4>문의하기</h4>
+                    <p><i class="fas fa-envelope"></i> support@aimvmarket.com</p>
+                    <p><i class="fas fa-phone"></i> 1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI MV Market. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/freelancer.js"></script>
+</body>
+</html>

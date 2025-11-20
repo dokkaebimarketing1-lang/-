@@ -1,0 +1,412 @@
+/* 프로필 상세 페이지 */
+.profile-detail {
+    padding: 3rem 0;
+    background-color: #f8f9fa;
+}
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 2rem;
+}
+
+.profile-main {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile-header {
+    margin-bottom: 2rem;
+}
+
+.profile-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #2d3436;
+}
+
+.profile-subtitle {
+    font-size: 1.2rem;
+    color: #636e72;
+    margin-bottom: 1rem;
+}
+
+.profile-meta {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.meta-item i {
+    color: #00c471;
+}
+
+.text-muted {
+    color: #999;
+    margin-left: 0.3rem;
+}
+
+.profile-specialty {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.profile-section {
+    margin-bottom: 2.5rem;
+}
+
+.profile-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2d3436;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #00c471;
+}
+
+.description-text {
+    line-height: 1.8;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-tag {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.portfolio-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.portfolio-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.portfolio-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.portfolio-item:hover .play-overlay {
+    opacity: 1;
+}
+
+.play-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00c471;
+    font-size: 1.5rem;
+}
+
+.portfolio-info {
+    padding: 1rem;
+}
+
+.portfolio-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #2d3436;
+}
+
+.portfolio-views {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.portfolio-views i {
+    margin-right: 0.3rem;
+}
+
+/* 사이드바 */
+.profile-sidebar {
+    position: relative;
+}
+
+.order-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.order-card.sticky {
+    position: sticky;
+    top: 100px;
+}
+
+.price-section {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.price-label {
+    display: block;
+    color: #636e72;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.price-amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00c471;
+}
+
+.service-info {
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item i {
+    color: #00c471;
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+}
+
+.info-item strong {
+    display: block;
+    color: #2d3436;
+    margin-bottom: 0.3rem;
+}
+
+.info-item p {
+    color: #636e72;
+    font-size: 0.95rem;
+}
+
+.btn-order,
+.btn-contact {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-order {
+    background-color: #00c471;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.btn-order:hover {
+    background-color: #00a85d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 196, 113, 0.3);
+}
+
+.btn-contact {
+    background-color: white;
+    color: #00c471;
+    border: 2px solid #00c471;
+}
+
+.btn-contact:hover {
+    background-color: #f0fdf7;
+}
+
+.phone-display {
+    text-align: center;
+    padding: 1rem;
+    background: #e8f5e9;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #2d3436;
+}
+
+.phone-display i {
+    color: #00c471;
+    margin-right: 0.5rem;
+}
+
+/* 비디오 모달 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    margin: 3% auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 12px;
+    animation: modalSlideIn 0.3s;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #2d3436;
+}
+
+.video-info p {
+    color: #636e72;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .order-card.sticky {
+        position: relative;
+        top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-info h1 {
+        font-size: 2rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .price-amount {
+        font-size: 2rem;
+    }
+}

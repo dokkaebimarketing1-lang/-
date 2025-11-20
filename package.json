@@ -1,0 +1,16 @@
+{
+  "name": "ai-music-video-marketplace",
+  "version": "1.0.0",
+  "description": "AI 뮤직비디오 제작 프리랜서 재능마켓 플랫폼",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["ai", "music-video", "marketplace", "freelancer"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
