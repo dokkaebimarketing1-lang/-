@@ -162,11 +162,16 @@ function sortFreelancers(sortBy) {
     displayFreelancers(sorted);
 }
 
-// 카테고리로 필터링
+// 카테고리로 필터링 (송 타입 기준)
 function filterByCategory(category) {
-    const filtered = freelancersData.filter(freelancer => 
-        freelancer.specialty.includes(category)
-    );
+    const filtered = freelancersData.filter(freelancer => {
+        // songTypes 배열이 있으면 그것을 우선 사용
+        if (freelancer.songTypes && Array.isArray(freelancer.songTypes)) {
+            return freelancer.songTypes.some(type => type.includes(category) || category.includes(type));
+        }
+        // 없으면 specialty 사용
+        return freelancer.specialty && freelancer.specialty.includes(category);
+    });
     
     displayFreelancers(filtered);
     
