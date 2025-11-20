@@ -174,6 +174,18 @@ function filterByCategory(category) {
     document.querySelector('.freelancers').scrollIntoView({ behavior: 'smooth' });
 }
 
+// 타겟 고객별 필터링
+function filterByTarget(targetType) {
+    const filtered = freelancersData.filter(freelancer => 
+        freelancer.targetClients && freelancer.targetClients.includes(targetType)
+    );
+    
+    displayFreelancers(filtered);
+    
+    // 프리랜서 섹션으로 스크롤
+    document.querySelector('.freelancers').scrollIntoView({ behavior: 'smooth' });
+}
+
 // 부드러운 스크롤 (네비게이션 링크)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

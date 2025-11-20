@@ -10,24 +10,75 @@
     "specialty": "힙합/랩 뮤직비디오",
     "description": "최신 AI 기술을 활용한 고퀄리티 뮤직비디오 제작 전문가입니다. 5년 이상의 경력으로 500개 이상의 프로젝트를 성공적으로 완료했습니다.",
     "phone": "010-1234-5678",
+    "targetClients": ["상담사", "개인"],
+    "avgROI": "320%",
+    "successRate": "94%",
     "portfolio": [
       {
         "title": "힙합 아티스트 - 'Night City' MV",
         "thumbnail": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "1.2M"
+        "views": "1.2M",
+        "clientType": "상담사",
+        "results": {
+          "salesIncrease": "285%",
+          "adPerformance": {
+            "ctr": "8.2%",
+            "cpm": "₩1,200",
+            "conversions": "3,450건",
+            "roas": "580%"
+          },
+          "engagement": {
+            "likes": "45K",
+            "shares": "12K",
+            "comments": "8.5K"
+          },
+          "businessImpact": "월 상담 신청 120건 → 342건 (185% 증가)"
+        }
       },
       {
         "title": "인디 밴드 - 'Dreams' MV",
         "thumbnail": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "850K"
+        "views": "850K",
+        "clientType": "개인",
+        "results": {
+          "salesIncrease": "420%",
+          "adPerformance": {
+            "ctr": "12.5%",
+            "cpm": "₩980",
+            "conversions": "5,200건",
+            "roas": "720%"
+          },
+          "engagement": {
+            "likes": "38K",
+            "shares": "15K",
+            "comments": "6.2K"
+          },
+          "businessImpact": "음원 스트리밍 15만 → 78만 (420% 증가)"
+        }
       },
       {
         "title": "솔로 가수 - 'Sunrise' MV",
         "thumbnail": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "650K"
+        "views": "650K",
+        "clientType": "개인",
+        "results": {
+          "salesIncrease": "195%",
+          "adPerformance": {
+            "ctr": "6.8%",
+            "cpm": "₩1,450",
+            "conversions": "2,100건",
+            "roas": "340%"
+          },
+          "engagement": {
+            "likes": "28K",
+            "shares": "7K",
+            "comments": "4.8K"
+          },
+          "businessImpact": "팬클럽 가입 800명 → 2,360명 (195% 증가)"
+        }
       }
     ],
     "skills": ["AI 영상생성", "모션그래픽", "컬러그레이딩", "스토리보드"],
@@ -45,18 +96,53 @@
     "specialty": "발라드/감성 뮤직비디오",
     "description": "감성적이고 스토리텔링이 강한 뮤직비디오를 제작합니다. AI와 전통적 촬영 기법을 조합하여 독특한 분위기를 연출합니다.",
     "phone": "010-2345-6789",
+    "targetClients": ["개인", "기업"],
+    "avgROI": "275%",
+    "successRate": "91%",
     "portfolio": [
       {
         "title": "발라드 가수 - '기억' MV",
         "thumbnail": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "2.1M"
+        "views": "2.1M",
+        "clientType": "개인",
+        "results": {
+          "salesIncrease": "380%",
+          "adPerformance": {
+            "ctr": "10.5%",
+            "cpm": "₩850",
+            "conversions": "8,900건",
+            "roas": "650%"
+          },
+          "engagement": {
+            "likes": "89K",
+            "shares": "28K",
+            "comments": "15K"
+          },
+          "businessImpact": "음원 판매 3만장 → 14.4만장 (380% 증가)"
+        }
       },
       {
         "title": "어쿠스틱 듀오 - 'Together' MV",
         "thumbnail": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "920K"
+        "views": "920K",
+        "clientType": "기업",
+        "results": {
+          "salesIncrease": "215%",
+          "adPerformance": {
+            "ctr": "7.8%",
+            "cpm": "₩1,100",
+            "conversions": "4,200건",
+            "roas": "480%"
+          },
+          "engagement": {
+            "likes": "42K",
+            "shares": "11K",
+            "comments": "7.5K"
+          },
+          "businessImpact": "브랜드 인지도 35% → 75% (40%p 상승)"
+        }
       }
     ],
     "skills": ["AI 생성", "시네마틱 편집", "감성 연출", "음악 싱크"],
@@ -74,24 +160,75 @@
     "specialty": "EDM/일렉트로닉 뮤직비디오",
     "description": "최첨단 AI 기술과 실험적 비주얼로 압도적인 뮤직비디오를 제작합니다. 독창적이고 강렬한 영상미를 추구합니다.",
     "phone": "010-3456-7890",
+    "targetClients": ["기업", "개인"],
+    "avgROI": "445%",
+    "successRate": "97%",
     "portfolio": [
       {
         "title": "EDM DJ - 'Electric Soul' MV",
         "thumbnail": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "3.5M"
+        "views": "3.5M",
+        "clientType": "기업",
+        "results": {
+          "salesIncrease": "520%",
+          "adPerformance": {
+            "ctr": "15.2%",
+            "cpm": "₩720",
+            "conversions": "15,800건",
+            "roas": "890%"
+          },
+          "engagement": {
+            "likes": "156K",
+            "shares": "45K",
+            "comments": "32K"
+          },
+          "businessImpact": "이벤트 티켓 판매 2,500장 → 15,500장 (520% 증가)"
+        }
       },
       {
         "title": "일렉트로닉 밴드 - 'Neon' MV",
         "thumbnail": "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "1.8M"
+        "views": "1.8M",
+        "clientType": "개인",
+        "results": {
+          "salesIncrease": "395%",
+          "adPerformance": {
+            "ctr": "11.8%",
+            "cpm": "₩890",
+            "conversions": "7,200건",
+            "roas": "720%"
+          },
+          "engagement": {
+            "likes": "78K",
+            "shares": "22K",
+            "comments": "18K"
+          },
+          "businessImpact": "Spotify 월간 리스너 8만 → 39.6만 (395% 증가)"
+        }
       },
       {
         "title": "신스팝 가수 - 'Digital Dreams' MV",
         "thumbnail": "https://images.unsplash.com/photo-1619983081563-430f63602796?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "1.2M"
+        "views": "1.2M",
+        "clientType": "개인",
+        "results": {
+          "salesIncrease": "280%",
+          "adPerformance": {
+            "ctr": "9.5%",
+            "cpm": "₩1,050",
+            "conversions": "5,400건",
+            "roas": "560%"
+          },
+          "engagement": {
+            "likes": "52K",
+            "shares": "15K",
+            "comments": "11K"
+          },
+          "businessImpact": "SNS 팔로워 3.5만 → 13.3만 (280% 증가)"
+        }
       }
     ],
     "skills": ["Generative AI", "3D 모델링", "VFX", "애니메이션"],
@@ -109,18 +246,53 @@
     "specialty": "K-POP/아이돌 뮤직비디오",
     "description": "K-POP 스타일의 화려하고 트렌디한 뮤직비디오 제작 전문가입니다. 안무 영상부터 스토리 기반 MV까지 다양하게 제작합니다.",
     "phone": "010-4567-8901",
+    "targetClients": ["기업", "개인"],
+    "avgROI": "385%",
+    "successRate": "93%",
     "portfolio": [
       {
         "title": "아이돌 그룹 - 'Shine' MV",
         "thumbnail": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "5.2M"
+        "views": "5.2M",
+        "clientType": "기업",
+        "results": {
+          "salesIncrease": "650%",
+          "adPerformance": {
+            "ctr": "18.5%",
+            "cpm": "₩650",
+            "conversions": "28,500건",
+            "roas": "1,200%"
+          },
+          "engagement": {
+            "likes": "245K",
+            "shares": "68K",
+            "comments": "52K"
+          },
+          "businessImpact": "앨범 판매 5만장 → 37.5만장 (650% 증가)"
+        }
       },
       {
         "title": "신인 걸그룹 - 'Pop Star' MV",
         "thumbnail": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "2.8M"
+        "views": "2.8M",
+        "clientType": "기업",
+        "results": {
+          "salesIncrease": "420%",
+          "adPerformance": {
+            "ctr": "14.2%",
+            "cpm": "₩780",
+            "conversions": "12,800건",
+            "roas": "850%"
+          },
+          "engagement": {
+            "likes": "125K",
+            "shares": "35K",
+            "comments": "28K"
+          },
+          "businessImpact": "팬카페 회원 2만 → 10.4만 (420% 증가)"
+        }
       }
     ],
     "skills": ["퍼포먼스 편집", "컬러풀 연출", "AI 배경생성", "트렌드 분석"],
@@ -138,18 +310,53 @@
     "specialty": "애니메이션/일러스트 뮤직비디오",
     "description": "AI 기반 애니메이션 스타일의 독특한 뮤직비디오를 제작합니다. 일본 애니메이션부터 웹툰 스타일까지 다양하게 표현합니다.",
     "phone": "010-5678-9012",
+    "targetClients": ["개인", "상담사"],
+    "avgROI": "310%",
+    "successRate": "95%",
     "portfolio": [
       {
         "title": "보컬로이드 - 'Virtual Love' MV",
         "thumbnail": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "1.5M"
+        "views": "1.5M",
+        "clientType": "개인",
+        "results": {
+          "salesIncrease": "340%",
+          "adPerformance": {
+            "ctr": "13.2%",
+            "cpm": "₩920",
+            "conversions": "6,800건",
+            "roas": "680%"
+          },
+          "engagement": {
+            "likes": "68K",
+            "shares": "24K",
+            "comments": "19K"
+          },
+          "businessImpact": "니코동 재생수 12만 → 52.8만 (340% 증가)"
+        }
       },
       {
         "title": "인디 가수 - 'Paper Heart' MV",
         "thumbnail": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "780K"
+        "views": "780K",
+        "clientType": "상담사",
+        "results": {
+          "salesIncrease": "265%",
+          "adPerformance": {
+            "ctr": "9.8%",
+            "cpm": "₩1,180",
+            "conversions": "3,900건",
+            "roas": "520%"
+          },
+          "engagement": {
+            "likes": "35K",
+            "shares": "12K",
+            "comments": "8K"
+          },
+          "businessImpact": "상담 문의 95건/월 → 347건/월 (265% 증가)"
+        }
       }
     ],
     "skills": ["2D 애니메이션", "캐릭터 디자인", "AI 일러스트", "모션"],
@@ -167,24 +374,75 @@
     "specialty": "시네마틱/드라마틱 뮤직비디오",
     "description": "영화 같은 고품질 뮤직비디오를 제작합니다. 스토리텔링과 영상미가 조화를 이루는 작품을 만듭니다.",
     "phone": "010-6789-0123",
+    "targetClients": ["기업", "상담사"],
+    "avgROI": "410%",
+    "successRate": "96%",
     "portfolio": [
       {
         "title": "록 밴드 - 'Rebel' MV",
         "thumbnail": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "2.3M"
+        "views": "2.3M",
+        "clientType": "기업",
+        "results": {
+          "salesIncrease": "480%",
+          "adPerformance": {
+            "ctr": "16.8%",
+            "cpm": "₩680",
+            "conversions": "11,500건",
+            "roas": "920%"
+          },
+          "engagement": {
+            "likes": "102K",
+            "shares": "38K",
+            "comments": "25K"
+          },
+          "businessImpact": "콘서트 티켓 1,800매 → 10,440매 (480% 증가)"
+        }
       },
       {
         "title": "R&B 가수 - 'Midnight' MV",
         "thumbnail": "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "1.6M"
+        "views": "1.6M",
+        "clientType": "상담사",
+        "results": {
+          "salesIncrease": "355%",
+          "adPerformance": {
+            "ctr": "12.5%",
+            "cpm": "₩950",
+            "conversions": "7,200건",
+            "roas": "670%"
+          },
+          "engagement": {
+            "likes": "72K",
+            "shares": "21K",
+            "comments": "16K"
+          },
+          "businessImpact": "브랜드 제휴 문의 18건 → 82건 (355% 증가)"
+        }
       },
       {
         "title": "힙합 아티스트 - 'Legacy' MV",
         "thumbnail": "https://images.unsplash.com/photo-1619983081563-430f63602796?w=400",
         "video": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "views": "940K"
+        "views": "940K",
+        "clientType": "개인",
+        "results": {
+          "salesIncrease": "290%",
+          "adPerformance": {
+            "ctr": "10.2%",
+            "cpm": "₩1,080",
+            "conversions": "4,800건",
+            "roas": "580%"
+          },
+          "engagement": {
+            "likes": "42K",
+            "shares": "15K",
+            "comments": "11K"
+          },
+          "businessImpact": "음원 수익 월 280만원 → 1,092만원 (290% 증가)"
+        }
       }
     ],
     "skills": ["시네마토그래피", "조명 연출", "AI 배경확장", "드라마 연출"],

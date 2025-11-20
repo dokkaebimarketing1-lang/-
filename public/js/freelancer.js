@@ -44,6 +44,21 @@ function displayFreelancerProfile(freelancer) {
     document.getElementById('responseTime').textContent = freelancer.responseTime;
     document.getElementById('revisions').textContent = freelancer.revisions;
     
+    // ROI 통계 표시
+    if (freelancer.avgROI && freelancer.successRate) {
+        const roiStatsContainer = document.getElementById('roiStats');
+        roiStatsContainer.innerHTML = `
+            <div class="roi-stat-card">
+                <span class="roi-stat-label">평균 ROI</span>
+                <span class="roi-stat-value">${freelancer.avgROI}</span>
+            </div>
+            <div class="roi-stat-card">
+                <span class="roi-stat-label">성공률</span>
+                <span class="roi-stat-value">${freelancer.successRate}</span>
+            </div>
+        `;
+    }
+    
     // 스킬 표시
     const skillsContainer = document.getElementById('skills');
     skillsContainer.innerHTML = freelancer.skills.map(skill => 
@@ -52,9 +67,12 @@ function displayFreelancerProfile(freelancer) {
     
     // 포트폴리오 표시
     const portfolioContainer = document.getElementById('portfolio');
-    portfolioContainer.innerHTML = freelancer.portfolio.map((item, index) => `
-        <div class="portfolio-item" onclick="openVideoModal(${index})">
-            <div class="portfolio-thumbnail">
+    portfolioContainer.innerHTML = freelancer.portfolio.map((item, index) => {
+        const clientTypeClass = item.clientType === '상담사' ? 'consultant' : 
+                               item.clientType === '개인' ? 'individual' : 'business';
+        return `
+        <div class="portfolio-item" style="cursor: pointer;">
+            <div class="portfolio-thumbnail" onclick="openVideoModal(${index})">
                 <img src="${item.thumbnail}" alt="${item.title}" 
                      onerror="this.src='https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400'">
                 <div class="play-overlay">
@@ -64,13 +82,45 @@ function displayFreelancerProfile(freelancer) {
                 </div>
             </div>
             <div class="portfolio-info">
+                <span class="client-type-badge ${clientTypeClass}">
+                    ${item.clientType === '상담사' ? '👔 상담사' : 
+                      item.clientType === '개인' ? '🎵 개인' : '🏢 기업'}
+                </span>
                 <h4>${item.title}</h4>
                 <p class="portfolio-views">
                     <i class="fas fa-eye"></i> ${item.views} 조회
                 </p>
+                ${item.results ? `
+                <div class="portfolio-results">
+                    <h4><i class="fas fa-chart-line"></i> 실제 성과</h4>
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <span class="label">매출 증가</span>
+                            <span class="value">${item.results.salesIncrease}</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">광고 ROAS</span>
+                            <span class="value">${item.results.adPerformance.roas}</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">클릭률 (CTR)</span>
+                            <span class="value">${item.results.adPerformance.ctr}</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">전환수</span>
+                            <span class="value">${item.results.adPerformance.conversions}</span>
+                        </div>
+                    </div>
+                    <div class="result-highlight">
+                        <i class="fas fa-bullseye"></i>
+                        ${item.results.businessImpact}
+                    </div>
+                </div>
+                ` : ''}
             </div>
         </div>
-    `).join('');
+    `;
+    }).join('');
     
     // 전화 상담 버튼
     const phoneBtn = document.getElementById('phoneBtn');
