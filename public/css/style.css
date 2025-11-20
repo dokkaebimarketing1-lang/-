@@ -72,6 +72,13 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 .logo i {
@@ -576,8 +583,19 @@ body {
     position: relative;
     cursor: help;
     color: var(--primary-light);
-    font-size: 1.1rem;
     transition: all 0.3s;
+    opacity: 0.6;
+    margin-left: 0.3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-icon i {
+    font-size: 16px !important;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
 }
 
 .info-icon:hover {
@@ -764,15 +782,34 @@ body {
     color: white;
 }
 
-.specialty {
-    display: inline-block;
+.song-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.song-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     background: linear-gradient(135deg, #e0e7ff 0%, #ddd6fe 100%);
     color: var(--primary-dark);
-    padding: 0.5rem 1.2rem;
+    padding: 0.5rem 1rem;
     border-radius: 10px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    margin-bottom: 1.2rem;
+    transition: all 0.3s;
+}
+
+.song-type-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.song-type-badge i {
+    font-size: 0.8rem;
+    color: var(--primary-color);
 }
 
 .freelancer-stats {

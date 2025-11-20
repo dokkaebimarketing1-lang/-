@@ -48,7 +48,15 @@ function displayFreelancerProfile(freelancer) {
     document.getElementById('reviewCount').textContent = `(${freelancer.reviews}개 리뷰)`;
     document.getElementById('experience').textContent = `경력 ${freelancer.experience}`;
     document.getElementById('orderCount').textContent = `${freelancer.orders}건 완료`;
-    document.getElementById('specialty').textContent = freelancer.specialty;
+    
+    // 송 타입 배열 표시
+    const songTypesContainer = document.getElementById('specialty');
+    if (freelancer.songTypes && freelancer.songTypes.length > 0) {
+        songTypesContainer.innerHTML = freelancer.songTypes.map(type => 
+            `<span class="song-type-badge-detail"><i class="fas fa-music"></i> ${type}</span>`
+        ).join('');
+    }
+    
     document.getElementById('description').textContent = freelancer.description;
     
     // 인증서 표시
@@ -86,6 +94,49 @@ function displayFreelancerProfile(freelancer) {
     skillsContainer.innerHTML = freelancer.skills.map(skill => 
         `<span class="skill-tag"><i class="fas fa-check"></i> ${skill}</span>`
     ).join('');
+    
+    // 크리에이터 특별 영상 표시
+    const specialSongsContainer = document.getElementById('specialSongs');
+    if (freelancer.introSong && freelancer.dreamSong) {
+        specialSongsContainer.innerHTML = `
+            <div class="special-song-card">
+                <div class="special-song-type">
+                    <i class="fas fa-user-circle"></i>
+                    개인소개송
+                </div>
+                <div class="special-song-thumbnail" onclick="openSpecialVideo('intro')">
+                    <img src="${freelancer.introSong.thumbnail}" alt="${freelancer.introSong.title}">
+                    <div class="play-overlay">
+                        <div class="play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="special-song-info">
+                    <h4>${freelancer.introSong.title}</h4>
+                    <p>${freelancer.introSong.description}</p>
+                </div>
+            </div>
+            <div class="special-song-card">
+                <div class="special-song-type">
+                    <i class="fas fa-star"></i>
+                    꿈꿈송
+                </div>
+                <div class="special-song-thumbnail" onclick="openSpecialVideo('dream')">
+                    <img src="${freelancer.dreamSong.thumbnail}" alt="${freelancer.dreamSong.title}">
+                    <div class="play-overlay">
+                        <div class="play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="special-song-info">
+                    <h4>${freelancer.dreamSong.title}</h4>
+                    <p>${freelancer.dreamSong.description}</p>
+                </div>
+            </div>
+        `;
+    }
     
     // 포트폴리오 표시
     const portfolioContainer = document.getElementById('portfolio');
@@ -169,6 +220,24 @@ function showPhoneNumber() {
             window.location.href = `tel:${currentFreelancer.phone}`;
         };
     }
+}
+
+// 특별 영상 모달 열기
+function openSpecialVideo(type) {
+    if (!currentFreelancer) return;
+    
+    const song = type === 'intro' ? currentFreelancer.introSong : currentFreelancer.dreamSong;
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalTitle = document.getElementById('modalVideoTitle');
+    const modalViews = document.getElementById('modalVideoViews');
+    
+    modalVideo.src = song.video + '?autoplay=1';
+    modalTitle.textContent = song.title;
+    modalViews.textContent = type === 'intro' ? '개인소개송' : '꿈꿈송';
+    
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
 }
 
 // 비디오 모달 열기
