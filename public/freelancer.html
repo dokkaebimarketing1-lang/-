@@ -34,6 +34,12 @@
                 <!-- 왼쪽: 프로필 정보 -->
                 <div class="profile-main">
                     <div class="profile-header">
+                        <div class="profile-photo-section">
+                            <img id="profilePhoto" src="" alt="프로필 사진" class="profile-photo">
+                            <div id="verifiedBadge" class="verified-badge" style="display: none;">
+                                <i class="fas fa-check-circle"></i> 인증됨
+                            </div>
+                        </div>
                         <div class="profile-info">
                             <h1 id="freelancerName">로딩 중...</h1>
                             <p id="freelancerTitle" class="profile-subtitle"></p>
@@ -44,9 +50,16 @@
                                     <span id="reviewCount" class="text-muted"></span>
                                 </div>
                                 <div class="meta-item">
-                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-briefcase"></i>
+                                    <span id="experience"></span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-check-double"></i>
                                     <span id="orderCount"></span>
                                 </div>
+                            </div>
+                            <div id="certifications" class="certifications">
+                                <!-- JavaScript로 동적 생성 -->
                             </div>
                         </div>
                     </div>

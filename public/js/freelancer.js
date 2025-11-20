@@ -30,31 +30,53 @@ async function loadFreelancerProfile() {
 
 // 프로필 정보 표시
 function displayFreelancerProfile(freelancer) {
+    // 프로필 사진
+    if (freelancer.profilePhoto) {
+        document.getElementById('profilePhoto').src = freelancer.profilePhoto;
+        document.getElementById('profilePhoto').alt = freelancer.name;
+    }
+    
+    // 인증 배지
+    if (freelancer.verified) {
+        document.getElementById('verifiedBadge').style.display = 'block';
+    }
+    
     // 기본 정보
     document.getElementById('freelancerName').textContent = freelancer.name;
     document.getElementById('freelancerTitle').textContent = freelancer.title;
     document.getElementById('rating').textContent = freelancer.rating;
     document.getElementById('reviewCount').textContent = `(${freelancer.reviews}개 리뷰)`;
+    document.getElementById('experience').textContent = `경력 ${freelancer.experience}`;
     document.getElementById('orderCount').textContent = `${freelancer.orders}건 완료`;
     document.getElementById('specialty').textContent = freelancer.specialty;
     document.getElementById('description').textContent = freelancer.description;
+    
+    // 인증서 표시
+    if (freelancer.certifications && freelancer.certifications.length > 0) {
+        const certsContainer = document.getElementById('certifications');
+        certsContainer.innerHTML = freelancer.certifications.map(cert => 
+            `<span class="cert-badge"><i class="fas fa-certificate"></i> ${cert}</span>`
+        ).join('');
+    }
     
     // 가격 및 서비스 정보
     document.getElementById('price').textContent = freelancer.price;
     document.getElementById('responseTime').textContent = freelancer.responseTime;
     document.getElementById('revisions').textContent = freelancer.revisions;
     
-    // ROI 통계 표시
+    // ROI 통계 표시 (쉬운 용어로)
     if (freelancer.avgROI && freelancer.successRate) {
         const roiStatsContainer = document.getElementById('roiStats');
         roiStatsContainer.innerHTML = `
             <div class="roi-stat-card">
-                <span class="roi-stat-label">평균 ROI</span>
+                <span class="roi-stat-label">평균 효과</span>
                 <span class="roi-stat-value">${freelancer.avgROI}</span>
+                <span class="roi-stat-desc">투자 대비 수익</span>
             </div>
             <div class="roi-stat-card">
-                <span class="roi-stat-label">성공률</span>
+                <span class="roi-stat-label">만족도</span>
                 <span class="roi-stat-value">${freelancer.successRate}</span>
+                <span class="roi-stat-desc">고객 성공률</span>
             </div>
         `;
     }
@@ -92,28 +114,25 @@ function displayFreelancerProfile(freelancer) {
                 </p>
                 ${item.results ? `
                 <div class="portfolio-results">
-                    <h4><i class="fas fa-chart-line"></i> 실제 성과</h4>
-                    <div class="result-grid">
-                        <div class="result-item">
-                            <span class="label">매출 증가</span>
-                            <span class="value">${item.results.salesIncrease}</span>
+                    <h4><i class="fas fa-trophy"></i> 실제 효과</h4>
+                    <div class="result-simple">
+                        <div class="result-main">
+                            <span class="result-label">${item.results.simple.mainMetric}</span>
+                            <span class="result-big">${item.results.simple.mainValue}</span>
                         </div>
-                        <div class="result-item">
-                            <span class="label">광고 ROAS</span>
-                            <span class="value">${item.results.adPerformance.roas}</span>
-                        </div>
-                        <div class="result-item">
-                            <span class="label">클릭률 (CTR)</span>
-                            <span class="value">${item.results.adPerformance.ctr}</span>
-                        </div>
-                        <div class="result-item">
-                            <span class="label">전환수</span>
-                            <span class="value">${item.results.adPerformance.conversions}</span>
-                        </div>
+                        <p class="result-desc">${item.results.simple.description}</p>
                     </div>
-                    <div class="result-highlight">
-                        <i class="fas fa-bullseye"></i>
-                        ${item.results.businessImpact}
+                    <button class="btn-detail-toggle" onclick="toggleDetails(event, ${index})">
+                        <i class="fas fa-chevron-down"></i> 자세히 보기
+                    </button>
+                    <div class="result-detailed" id="detail-${index}" style="display: none;">
+                        <h5>📊 상세 성과</h5>
+                        ${Object.entries(item.results.detailed).map(([key, value]) => `
+                            <div class="detail-row">
+                                <span class="detail-label">${formatLabel(key)}</span>
+                                <span class="detail-value">${value}</span>
+                            </div>
+                        `).join('')}
                     </div>
                 </div>
                 ` : ''}
@@ -178,6 +197,63 @@ function closeVideoModal() {
     modal.style.display = 'none';
     modalVideo.src = '';
     document.body.style.overflow = 'auto';
+}
+
+// 라벨 한글화
+function formatLabel(key) {
+    const labels = {
+        'views': '조회수',
+        'shares': '공유 횟수',
+        'clicks': '클릭 수',
+        'conversions': '전환/예약',
+        'cost': '광고 효율',
+        'subscribers': '구독자',
+        'fanclub': '팬 수',
+        'sales': '매출',
+        'brandRecall': '브랜드 인지도',
+        'storeVisits': '매장 방문',
+        'inquiries': '문의 수',
+        'investment': '투자 유치',
+        'hiring': '채용 효과',
+        'bookings': '예약/공연',
+        'followers': '팔로워',
+        'income': '수입 증가',
+        'repeat': '재생 횟수',
+        'satisfaction': '만족도',
+        'memories': '추억 보관',
+        'engagement': '참여도',
+        'morale': '만족도 변화',
+        'retention': '직원 만족',
+        'compliments': '축하 메시지',
+        'memory': '추억 가치',
+        'comments': '댓글',
+        'impact': '영향력',
+        'familyEngagement': '가족 참여',
+        'emotionalImpact': '감동 효과',
+        'legacy': '유산 가치',
+        'brandValue': '브랜드 가치',
+        'customerLoyalty': '충성 고객',
+        'partnerships': '제휴 문의',
+        'revenue': '매출',
+        'trust': '신뢰도',
+        'enrollment': '수강생'
+    };
+    return labels[key] || key;
+}
+
+// 자세히 보기 토글
+function toggleDetails(event, index) {
+    event.stopPropagation();
+    const detailDiv = document.getElementById(`detail-${index}`);
+    const btn = event.currentTarget;
+    
+    if (detailDiv.style.display === 'none') {
+        detailDiv.style.display = 'block';
+        btn.innerHTML = '<i class="fas fa-chevron-up"></i> 간단히 보기';
+    } else {
+        detailDiv.style.display = 'none';
+        btn.innerHTML = '<i class="fas fa-chevron-down"></i> 자세히 보기';
+    }
 }
 
 // 모달 이벤트 리스너 설정
