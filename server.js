@@ -24,6 +24,11 @@ app.get('/order/:id', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'order.html'));
 });
 
+// 대시보드 페이지
+app.get('/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
+});
+
 // API: 프리랜서 목록
 app.get('/api/freelancers', (req, res) => {
   res.json(require('./data/freelancers.json'));

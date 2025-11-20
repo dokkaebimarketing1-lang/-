@@ -49,9 +49,13 @@ function displayFreelancers(freelancers) {
                     </div>
                 </div>
                 
-                <span class="specialty">
-                    <i class="fas fa-tag"></i> ${freelancer.specialty}
-                </span>
+                <div class="song-types">
+                    ${freelancer.songTypes.map(type => 
+                        `<span class="song-type-badge">
+                            <i class="fas fa-music"></i> ${type}
+                        </span>`
+                    ).join('')}
+                </div>
                 
                 <div class="freelancer-stats">
                     <div class="stat">
